@@ -1,0 +1,15 @@
+数据请求
+<p>在app.module.ts中引入HttpClientModule并依赖模块注入</p>
+<p>在自己ts中引入HttpClient,在构造函数中声明</p>
+<p>post还需要再自己ts里引入请求头HttpHeaders</p>
+<p>jsonp还要再app.module.ts中引入HttpClientJsonpModule</p>
+<p>也可以使用第三方模块axios请求数据</p>
+<button (click)="getdata()">get请求数据</button>
+<button (click)="dologin()">post提交数据</button>
+<button (click)="getJsonData()">jsonp请求数据</button>
+<hr>
+<ul>
+    <li *ngFor="let item of list">
+        {{item.title}}
+    </li>
+</ul>

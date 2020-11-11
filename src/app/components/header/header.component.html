@@ -1,0 +1,19 @@
+<h1>对DOM的操作</h1>
+<p>1.原生js</p>
+<p>ngOnInit:组件和指令（类似*ngif）初始化完成，并不是真正的DOM加载完成</p>
+<p>ngafterViewInit:视图加载完成以后触发的方法，dom加载完成
+    （建议把dom操作放在这里）
+</p>
+
+<h2>2.用viewchild实现dom操作</h2>
+<p>1.先在ts中引入ViewChild，2对要操作的div添加#name,</p>
+<p>@ViewChild('#name') name:any; 利用属性修饰符，获取dom元素赋值给name</p>
+<div #mybox>
+<input type="text">
+<div></div>
+</div>
+<hr>
+<h1>父子组件中通过viewchild调用子组件的方法</h1>
+<app-form #form></app-form>
+<button (click)="getchildmethod()">父组件获取子组件的方法</button>
+

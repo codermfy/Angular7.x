@@ -1,0 +1,8 @@
+<p>父组件</p>
+<p>父传子：
+    在子组件上绑定属性,子组件ts中引入Input，用@Input() title:any; 接收父组件传来的值
+</p>
+<hr>
+<app-son [title]='title' [msg]='msg' [run]='run' [father]='this' (outer)='getchild($event)'></app-son>
+<hr>
+<app-grandson></app-grandson>

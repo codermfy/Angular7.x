@@ -1,0 +1,59 @@
+<button (click)="goroute()">js跳转路由(动态路由)</button>
+<button (click)="getroute()">js跳转路由(get传值)</button>
+<h1>引入图片</h1>
+<img src="assets/images/angular的目录结构.png" alt="">
+<!-- 动态绑定数据用[]括起来 -->
+<img [src]="picUrl" alt="">
+<hr>
+<h1>循环显示数据索引值</h1>
+<div>
+    <ul>
+        <li *ngFor="let item of list;let key=index;">
+            {{key}}---{{item}}
+        </li>
+    </ul>
+</div>
+<h1>条件判断句 *ngif</h1>
+<div *ngIf="flag">
+    <img src="assets/images/angular的目录结构.png" alt="">
+</div>
+<div *ngIf="!flag">
+    <img src="assets/images/cookie,localStorage,SessionStorage区别.png" alt="">
+</div>
+<h1>条件判断句 *ngSwitch</h1>
+<span [ngSwitch]="sw">
+<p *ngSwitchCase="1">
+    case1
+</p>
+<p *ngSwitchCase="2">
+    case2
+</p>
+<p *ngSwitchDefault>
+    default
+</p>
+</span>
+<h1>属性[ngClass]、[ngStyle]</h1>
+<div [ngClass]="{'red': true}">
+    ngclass 通过boolean值判定是否绑定数据
+    可动态绑定
+</div>
+<div [ngStyle]="{'color': 'orange'}">
+    ngstyle 可以通过动态绑定一个对象，实现样式
+</div>
+<h1>管道</h1>
+{{today | date:'yyyy-MM-dd HH-mm-ss'}}
+<h1>事件</h1>
+
+<button (click)="run()">点击事件</button>
+
+<h1>表单事件</h1>
+{{'keydown'}}
+<p>可以传入参数$event</p>
+<p>可以获取e.keycode==13判断回车</p>
+<p>可以用e.target获取当前操作的DOM对象</p>
+
+<h1>双向数据绑定 只是针对表单</h1>
+<p>首先在app.module.ts中引入FormsModule</p>
+<input type="text" [(ngModel)]="msg">
+{{msg}}
+<button (click)="change()">回到默认值</button>

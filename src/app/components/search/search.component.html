@@ -1,0 +1,43 @@
+<div class='search'>
+    <header>
+        <label for="">ToDoList</label>
+        <input type="text" placeholder="添加ToDo" [(ngModel)]="keyword" (keypress)="addkeyword($event)">
+    </header>
+    <article>
+        <section>
+            <nav>
+            <span>正在进行</span>
+            <span>{{doingnum()}}</span>
+            </nav>
+            <ul>
+                <ng-container *ngFor="let item of keywordlist;let key=index">
+                
+                <li *ngIf="!item.state">
+                    <input type="checkbox" [id]="'check'+key" [(ngModel)]="item.state" (change)='statechange()'>   
+                    <label [for]="'check'+key">{{item.title}}</label>
+                    <span (click)="delete(key)">delete</span>
+                </li>
+            </ng-container>
+            </ul>
+        </section>
+        <section>
+            <nav>
+                <span>已经完成</span>
+                <span>{{donenum()}}</span>
+                </nav>
+                <ul class='done'>
+                    <ng-container *ngFor="let item of keywordlist;let key=index">
+                
+                        <li *ngIf="item.state">
+                            <input type="checkbox" [id]="'check'+key" [(ngModel)]="item.state" (change)='statechange()'>   
+                            <label [for]="'check'+key">{{item.title}}</label>
+                            <span (click)="delete(key)">delete</span>
+                        </li>
+                    </ng-container>
+                </ul>
+        </section>
+    </article>
+    <footer>
+        Copyright &copy; 2020 todolist.cn <span (click)="clear()">clear</span>
+    </footer>
+</div>

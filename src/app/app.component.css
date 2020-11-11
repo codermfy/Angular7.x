@@ -1,0 +1,11 @@
+a{
+    margin:0 10px;
+    color:white
+}
+header{
+    background-color: black;
+    height: 50px;
+}
+.active{
+    color:red
+}

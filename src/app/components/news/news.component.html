@@ -1,0 +1,42 @@
+
+<!-- <a [routerLink]="[ '/newscontent' ]" [queryParams]="{id:1,key:2}">newscontent</a> -->
+<a [routerLink]="[ '/newscontent' ,123,234]">newscontent</a>
+
+<h1>模板里面绑定数据</h1>
+<h2>{{title+'--ts'}}</h2>
+ <h2>{{username}}</h2>
+<h2>{{student}}</h2>
+<h2>{{userinfo}}</h2>
+<h2>{{userinfo.name}}</h2>
+<h2>{{userinfo.age}}</h2>
+{{message}}
+<hr>
+<h1>模板里面绑定属性</h1>
+<div [title]='student'>
+张三(鼠标放上来)
+</div>
+<hr>
+<h1>模板里面绑定html</h1>
+<div [innerHTML]='content'>
+</div>
+<hr>
+<h1>angular里面的数据循环</h1>
+<div>
+    <ul>
+        <li *ngFor="let item of arr">{{item}}</li>
+    </ul>
+    <ol>
+        <li *ngFor="let item of list">{{item}}</li>
+    </ol>
+    <ul>
+        <li *ngFor="let item of userlist">
+            {{item.username}}---{{item.age}}
+        </li>
+    </ul>
+    <ul *ngFor="let item of cars">
+        <p>brand:{{item.cate}}</p>
+        <li *ngFor="let item of item.list">
+            {{item.title}}
+        </li>
+    </ul>
+</div>
